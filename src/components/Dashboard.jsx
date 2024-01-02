@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IMG_URL, DASHBOARD_DATA, URL} from "../utils.js/constant";
+import { IMG_URL, DASHBOARD_DATA, URL, BUTTON} from "../utils.js/constant";
 
 
 const Dashboard = () => {
@@ -15,11 +15,6 @@ const Dashboard = () => {
         const jsonData = await data.json();
         setPostData(jsonData);
     }
-
-    useEffect(() => {
-        getData();
-    },[]);
-
 
     const handleToggle = () => {
         setToggle(!toggle);
@@ -39,6 +34,10 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
+        getData();
+    },[]);
+
+    useEffect(() => {
         localStorage.setItem('data', JSON.stringify(localData));
     },[localData])
 
@@ -50,7 +49,7 @@ const Dashboard = () => {
                     <p className="dashCtx">{DASHBOARD_DATA.BODY}</p>
                 </div>
                 <div className="hobbStyle">
-                    <button className="hobbButton" onClick={handleToggle}>+ Create Hobbies</button>
+                    <button className="hobbButton" onClick={handleToggle}>{BUTTON.MODAL_BTN}</button>
                 </div>
                 {toggle && <div className="modalContainer">
                     <div className="modal">
@@ -77,8 +76,8 @@ const Dashboard = () => {
                             onChange={(e) => setReason(e.target.value)}
                         />
                         <div className="modalButton">
-                            <button className="modalCancel" onClick={handleToggle}>Cancel</button>
-                            <button className="modalSubmit" onClick={handleSubmit}>Submit</button>
+                            <button className="modalCancel" onClick={handleToggle}>{BUTTON.CANCEL}</button>
+                            <button className="modalSubmit" onClick={handleSubmit}>{BUTTON.SUBMIT}</button>
                         </div>
                     </div>
                 </div>}

@@ -18,3 +18,17 @@ export const TABS = {
     HOBBIES: "Hobbies",
     SIGN_IN: "Sign In/Log In",
 }
+
+export const FORM_HEADING = {
+    TITLE: "Hello there!!",
+    SIGN_UP_CTX: "Sign up to Get Started",
+    LOGIN_CTX: "Welcome Again",
+}
+
+export const BUTTON = {
+    SUBMIT: "Submit",
+    CANCEL: "Cancel",
+    LOGIN: "login",
+    SIGN_UP: "Sign Up",
+    MODAL_BTN: "+ Create Hobbies",
+}

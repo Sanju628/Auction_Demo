@@ -4,6 +4,7 @@ import padlock from "../assests/padlock.png";
 import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import { useNavigate } from "react-router-dom";
+import { FORM_HEADING, BUTTON } from "../utils.js/constant";
 
 const Login = () => {
     const [loginData, setLoginData] = useState(
@@ -20,7 +21,6 @@ const Login = () => {
             ...loginData, [name] : value
         })
     }
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -46,7 +46,6 @@ const Login = () => {
         } else{
             alert("Please Enter Correct Credentails")
         }
-    
     }
 
     return (
@@ -55,8 +54,8 @@ const Login = () => {
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <div className="headingText">
-                            <h3>Hello there!!</h3>
-                            <p className="ctxText">Welcome Again</p>
+                            <h3>{FORM_HEADING.TITLE}</h3>
+                            <p className="ctxText">{FORM_HEADING.LOGIN_CTX}</p>
                         </div>
                         <div className="container">
                             <img className="logo" src={email} alt="react logo" />
@@ -82,7 +81,7 @@ const Login = () => {
                                 />
                             {errors.password && <span className="passwordSpan">{errors.password}</span>}
                         </div>
-                        <button type="submit" className="signButton">Login</button>
+                        <button type="submit" className="signButton">{BUTTON.LOGIN}</button>
                         <p className="textStyle">Don't have an account? <Link className="signLink" to="/">Sign In</Link></p>
                     </form>
                 </div>

@@ -4,6 +4,7 @@ import email from "../assests/email.png";
 import padlock from "../assests/padlock.png";
 import phone from "../assests/phone.png";
 import { Link } from "react-router-dom";
+import { FORM_HEADING, BUTTON } from "../utils.js/constant";
 
 
 const SignUp = () => {
@@ -62,8 +63,8 @@ const SignUp = () => {
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <div className="headingText">
-                            <h3>Hello there!!</h3>
-                            <p className="ctxText">Sign up to Get Started</p>
+                            <h3>{FORM_HEADING.TITLE}</h3>
+                            <p className="ctxText">{FORM_HEADING.SIGN_UP_CTX}</p>
                         </div>
                         <div className="container">
                             <img className="logo" src={contact} alt="Contact" />
@@ -109,7 +110,7 @@ const SignUp = () => {
                                 />
                             {errors.password && <span className="passwordSpan">{errors.password}</span>}  
                         </div>
-                        <button className="signButton">Sign Up</button>
+                        <button className="signButton">{BUTTON.SIGN_UP}</button>
                         <p className="textStyle">Already have an account? <Link className="signLink" to="/login">Login</Link></p>
                     </form>
                 </div>
